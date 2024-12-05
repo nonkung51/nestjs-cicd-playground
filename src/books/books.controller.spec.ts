@@ -31,7 +31,6 @@ describe('BooksController', () => {
   it('should add a new book', async () => {
     const bookData = { title: 'Test Book', author: 'Test Author' };
     const result = await controller.addBook(bookData);
-    
     expect(result).toHaveProperty('id');
     expect(result.title).toBe(bookData.title);
     expect(result.author).toBe(bookData.author);
