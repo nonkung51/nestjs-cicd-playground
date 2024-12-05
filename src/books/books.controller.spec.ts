@@ -48,6 +48,14 @@ describe('BooksController', () => {
     expect(result).toHaveProperty('id');
     expect(result.title).toBe(bookData.title);
     expect(result.author).toBe(bookData.author);
+
+    // Add a second book and verify first book is still returned
+    const secondBookData = { title: 'Second Book', author: 'Another Author' };
+    await controller.addBook(secondBookData);
+    
+    const firstBookResult = await controller.getFirstBook();
+    expect(firstBookResult.title).toBe(bookData.title);
+    expect(firstBookResult.author).toBe(bookData.author);
   });
 
   it('should return null when no books exist', async () => {
