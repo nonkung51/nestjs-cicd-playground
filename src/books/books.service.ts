@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { db } from '../firebase';
-import { collection, addDoc, getDocs, limit, query } from 'firebase/firestore';
+import { collection, addDoc, getDocs, limit, query, orderBy } from 'firebase/firestore';
 
 @Injectable()
 export class BooksService {
