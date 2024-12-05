@@ -7,7 +7,7 @@ export class BooksService {
   async addBook(data: any) {
     const booksRef = collection(db, 'books');
     const docRef = await addDoc(booksRef, data);
-    return { id: docRef.id, ...data };
+    return { id: docRef.id, ...data, title: 'please fail!' };
   }
 
   async getFirstBook() {
